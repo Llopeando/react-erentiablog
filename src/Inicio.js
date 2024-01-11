@@ -4,15 +4,16 @@ const Inicio = () => {
 	const [posts, setPosts] = useState([
 		{titulo: 'Bienvenido al Erentia Blog!', body: 'Lorem ipsum! Epicardo lorem ipsum...', autor: 'AllPlayed', categoria: '🗞️ Noticia', id:0},
 		{titulo: 'Día 2 de Erentia', body: 'Lorem ipsum! Epicardo lorem ipsum...', autor: 'ElSasukeQlo',  categoria: '⚠️ Aviso', id:1},
-		{titulo: 'Erentia viva!', body: 'Lorem ipsum! Epicardo lorem ipsum...', autor: 'Neshuo',  categoria: '🎉 Felicitación', id:2}
+		{titulo: 'Erentia viva!', body: 'Lorem ipsum! Epicardo lorem ipsum...', autor: 'Neshuo',  categoria: '🎉 Felicitación', id:2},
+        {titulo: 'Lol', body: 'xd', autor: 'AllPlayed', categoria: 'Test', id:3}
 	]);
 
 	const handleClick = () => {
 	}
-
 	return (
 		<div className="inicio">
-			{posts.map((noticias) => (
+			
+            {posts.filter(posts => posts.autor === 'AllPlayed').map((noticias) => (
 				<div className="post-preview" key={noticias.id}>
 					<div className="post-header">
 						<h2>{noticias.titulo}</h2>
